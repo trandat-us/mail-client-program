@@ -1,0 +1,29 @@
+{
+  "General": {
+    "Username": "Dat Tran",
+    "Useremail": "tmdat21@clc.fitus.edu.vn",
+    "Password": "caohao123456",
+    "MailServer": "10.123.0.181",
+    "SMTP": 2225,
+    "POP3": 3335,
+    "Autoload": 10
+  },
+  "Filter": {
+    "From" : {
+      "check": ["thmnhat21@clc.fitus.edu.vn", "naquan20@clc.fitus.edu.vn"],
+      "dest": "Project"
+    },
+    "Subject" : {
+      "check": ["urgent", "ASAP"],
+      "dest": "Important"
+    },
+    "Content" : {
+      "check": ["report", "meeting"],
+      "dest": "Work"
+    },
+    "Spam" : {
+      "check": ["virus", "hack", "crack"],
+      "dest": "Spam"
+    }
+  }
+}
