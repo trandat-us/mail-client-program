@@ -1,0 +1,25 @@
+{
+  "boxList": [
+    {
+      "boxName": "Inbox",
+      "emailList": []
+    },
+    {
+      "boxName": "Project",
+      "emailList": []
+    },
+    {
+      "boxName": "Important",
+      "emailList": []
+    },
+    {
+      "boxName": "Work",
+      "emailList": []
+    },
+    {
+      "boxName": "Spam",
+      "emailList": []
+    }
+  ],
+  "emailQuant": 0
+}
