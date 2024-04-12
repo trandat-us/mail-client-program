@@ -32,7 +32,7 @@ void readEmail(int boxIndex, int emailIndex){
 
   int numbAttach = MailBox["boxList"][boxIndex]["emailList"][emailIndex]["Attachment"].size();
   if(numbAttach > 0){
-    cout << "There's(re) " << numbAttach << " attachment(s) in this email, do you want to save it(them)?[Y/n]: ";
+    cout << "There're " << numbAttach << " attachments in this email, do you want to save them?[Y/n]: ";
     getline(cin, is_save);
     if(is_save == "Y" or is_save == "y"){
       string locate;
@@ -68,7 +68,7 @@ void showEmailBox(int boxIndex){
            << ", " << MailBox["boxList"][boxIndex]["emailList"][i]["Subject"].get<string>() << endl;
     }
 
-    cout << "\nWhich email you want to view: "; 
+    cout << "\nWhich email you want to read: "; 
     getline(cin, choice);
 
     if(choice.empty())

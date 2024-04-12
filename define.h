@@ -18,7 +18,7 @@ using json = nlohmann::json;
 
 #define BUFFER_SIZE 2048
 #define FILE_DATA_PER_LINE 72
-#define MAX_FILE_SIZE 20971520
+#define MAX_FILE_SIZE 3145728
 #define MAIL_BOX_PATH "emailBox.json"
 
 int smtp_port;
