@@ -29,21 +29,30 @@ string server_ip;
 string client_name;
 string client_email;
 string client_pass;
-string client_ip;
+string client_ip = "192.168.70.100";
 map<string, json> FilterInfo;
 json MailBox;
 
 // List of supported content-types
 map<string, string> contentTypeMapping = {
-  {".txt", "text/plain"}, {".html", "text/html"}, {".htm", "text/html"},
-  {".pdf", "application/pdf"}, {".doc", "application/msword"},
+  {".txt", "text/plain"}, 
+  {".html", "text/html"}, 
+  {".htm", "text/html"},
+  {".pdf", "application/pdf"}, 
+  {".doc", "application/msword"},
   {".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
-  {".xls", "application/vnd.ms-excel"}, {".xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
-  {".ppt", "application/vnd.ms-powerpoint"}, {".pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation"},
-  {".jpeg", "image/jpeg"} , {".jpg", "image/jpeg"}, {".png", "image/png"},
-  {".mp3", "audio/mpeg"}, {".wav", "audio/wav"}, 
+  {".xls", "application/vnd.ms-excel"}, 
+  {".xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+  {".ppt", "application/vnd.ms-powerpoint"}, 
+  {".pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation"},
+  {".jpeg", "image/jpeg"}, 
+  {".jpg", "image/jpeg"}, 
+  {".png", "image/png"},
+  {".mp3", "audio/mpeg"}, 
+  {".wav", "audio/wav"}, 
   {".mp4", "video/mp4"},
-  {".zip", "application/zip"}, {".tar", "application/x-tar"}
+  {".zip", "application/zip"}, 
+  {".tar", "application/x-tar"}
 };
 
 #endif

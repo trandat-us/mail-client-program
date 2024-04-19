@@ -238,6 +238,7 @@ void sendEmail(){
   if(send(sockSMTP, quit_cm.c_str(), quit_cm.length(), 0) < 0)
     error("Error: Failed to send QUIT command\n");
 
+  // Waiting for QUIT response
   char response[BUFFER_SIZE];
   while(1){
     bzero(response, BUFFER_SIZE);

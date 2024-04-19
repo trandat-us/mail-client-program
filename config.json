@@ -1,9 +1,9 @@
 {
   "General": {
-    "Username": "Dat Tran",
+    "Username": "Minh Dat",
     "Useremail": "tmdat21@clc.fitus.edu.vn",
     "Password": "caohao123456",
-    "MailServer": "10.123.0.181",
+    "MailServer": "192.168.70.1",
     "SMTP": 2225,
     "POP3": 3335,
     "Autoload": 10

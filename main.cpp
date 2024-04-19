@@ -20,11 +20,6 @@ void autoUpdateMailBox(){
 }
 
 void config(){
-  const char* ipCommand = exec("hostname -I");
-  char ip[100];
-  sscanf(ipCommand, "%99s", ip);
-  client_ip = ip;
-
   ifstream configFile("config.json");
   if(!configFile)
     error("Can't open config file");

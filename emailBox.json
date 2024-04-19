@@ -41,7 +41,7 @@
           "Content": "This is two files you ask me before",
           "Date": "Mon Apr  1 12:44:54 PM +07 2024",
           "From": "Minh Nhat <thmnhat21@clc.fitus.edu.vn>",
-          "Read": false,
+          "Read": true,
           "Subject": "Files you want",
           "To": [
             "tmdat21@clc.fitus.edu.vn"
@@ -59,7 +59,7 @@
           "Content": "This is the zip file you may like it",
           "Date": "Mon Apr  1 12:45:48 PM +07 2024",
           "From": "Anh Quan <naquan20@clc.fitus.edu.vn>",
-          "Read": false,
+          "Read": true,
           "Subject": "Zip file",
           "To": [
             "tmdat21@clc.fitus.edu.vn"

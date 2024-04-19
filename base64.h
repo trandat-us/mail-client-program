@@ -4,7 +4,6 @@
 #include <string.h>
 #include <fstream> 
 #include <sstream>
-// https://forum.arduino.cc/t/base64-file-encode-fstream/435626
 
 static const string base64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                    "abcdefghijklmnopqrstuvwxyz"
@@ -95,23 +94,21 @@ string base64_decode(std::string const& encoded_string) {
 }
 
 string base64_file(const char* filename){
-	/* File exists check */
+	// File exists check
 	ostringstream ss;
 	ss << filename;
 	
 	ifstream f(ss.str());
-	if (!f.good()){
-		//std::cout << "File " << ss.str()  << " does not exist!" << std::endl;
+	if (!f.good())
 		exit;
-	}
 	
-	/* Read file to string */
+	// Read file to string
 	ifstream fin(filename, std::ios::in | std::ios::binary);
 	ostringstream oss;
 	oss << fin.rdbuf();
 	std::string data(oss.str());
 
-	/* Convert string to base64 */
+	// Convert string to base64 	
 	const string binary_string = oss.str();
 	return base64_encode(reinterpret_cast<const unsigned char*>(binary_string.c_str()), binary_string.length());
 }
