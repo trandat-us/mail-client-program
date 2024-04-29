@@ -2,6 +2,7 @@
 #include "base64.h"
 #include "utility.h"
 
+// split a string separated with comma into a vector 
 vector<string> splitList(string str){
   vector<string> li;
   if(str.find(',') == string::npos)
@@ -18,6 +19,7 @@ vector<string> splitList(string str){
   return li;
 }
 
+// show content of an email
 void readEmail(int boxIndex, int emailIndex){
   MailBox["boxList"][boxIndex]["emailList"][emailIndex]["Read"] = true;
   string is_save;
@@ -56,6 +58,7 @@ void readEmail(int boxIndex, int emailIndex){
   jsonOutput.close();
 }
 
+// show all email boxes
 void showEmailBox(int boxIndex){
   string choice;
   int numbEmail = MailBox["boxList"][boxIndex]["emailList"].size();
@@ -85,6 +88,7 @@ void showEmailBox(int boxIndex){
   }
 }
 
+// perform 'read email' feature
 void viewEmail(){
   string choice;
   int numbBox = MailBox["boxList"].size();
@@ -111,6 +115,7 @@ void viewEmail(){
   }
 }
 
+// get email data from mail server with its index number
 string getEmailDataResponse(int sockPOP3, int id){
   string data;
   string retr_cm = "RETR " + to_string(id) + "\r\n";
@@ -132,6 +137,7 @@ string getEmailDataResponse(int sockPOP3, int id){
   return data;
 }
 
+// extract all neccessary information from email data
 json parseEmail(string emailData){
   stringstream ss(emailData);
   string from, date, subject, content;
@@ -218,6 +224,7 @@ json parseEmail(string emailData){
   return newEmail;
 }
 
+// get email box index
 int getBoxIndex(string boxName){
   for(int i = 0; i < MailBox["boxList"].size(); i++){
     if(MailBox["boxList"][i]["boxName"].get<string>() == boxName)
@@ -226,6 +233,7 @@ int getBoxIndex(string boxName){
   return -1;
 }
 
+// filter email based on config file and load it into corresponding email box
 void FilterAndLoad(json newEmail){
   for(auto it = FilterInfo.begin(); it != FilterInfo.end(); ++it) {
     string key = it->first;
@@ -252,6 +260,7 @@ void FilterAndLoad(json newEmail){
   MailBox["boxList"][getBoxIndex("Inbox")]["emailList"].push_back(newEmail);
 }
 
+// update email database which called every 10 seconds (based on config file)
 void UpdateMailBox(){
   int sockPOP3;
   struct sockaddr_in POP3_addr;
