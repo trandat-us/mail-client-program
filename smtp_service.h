@@ -2,6 +2,7 @@
 #include "base64.h"
 #include "utility.h"
 
+// generate random boundary value for MIME
 string generateBoundary() {
   const string chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
@@ -18,6 +19,7 @@ string generateBoundary() {
   return "------------" + boundary;
 }
 
+// configure email data with attachments
 string createEmailContentWithAttachment(vector<string> to, vector<string> cc, vector<string> bcc,
                             string subject, string content, vector<string> attach){
   string boundary = generateBoundary();
@@ -101,6 +103,7 @@ string createEmailContentWithAttachment(vector<string> to, vector<string> cc, ve
   return emailContent;
 }
 
+// configure email data without attachment
 string createEmailContentNoAttachment(vector<string> to, vector<string> cc, vector<string> bcc,
                             string subject, string content){
   string emailContent = "From: " + client_name + " <" + client_email + ">\r\n"
@@ -144,6 +147,8 @@ string createEmailContentNoAttachment(vector<string> to, vector<string> cc, vect
   return emailContent;
 }
 
+// insert input data into a vector, which used for adding
+// To, Cc and Bcc
 vector<string> readList(string title){
   vector<string> rs;
   string temp;
@@ -166,6 +171,7 @@ void sendRCPTCommand(int sockSMTP, vector<string> rcpt){
   }
 }
 
+// perform 'send email' feature
 void sendEmail(){
   int sockSMTP;
   struct sockaddr_in SMTP_addr;
