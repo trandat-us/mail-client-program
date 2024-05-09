@@ -82,7 +82,7 @@ string createEmailContentWithAttachment(vector<string> to, vector<string> cc, ve
     string fileContent = base64_file(attach[i].c_str());
     int fileContentLength = fileContent.length();
     if(ceil(fileContentLength * 4 / 3) > MAX_FILE_SIZE)
-      error(("File " + name + " is larger than 20 MB").c_str());
+      error(("File " + name + " is larger than 3 MB").c_str());
 
     emailContent += "--" + boundary + "\r\n"
                     "Content-Type: " + contentTypeMapping[extension] + "; name=\"" + name + "\"\r\n"
