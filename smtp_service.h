@@ -79,10 +79,12 @@ string createEmailContentWithAttachment(vector<string> to, vector<string> cc, ve
     else
       error(("Cannot detect extension from path " + attach[i]).c_str());
     
-    string fileContent = base64_file(attach[i].c_str());
-    int fileContentLength = fileContent.length();
-    if(ceil(fileContentLength * 4 / 3) > MAX_FILE_SIZE)
+    ifstream inAtt(attach[i].c_str(), ifstream::ate | ifstream::binary);
+    if(inAtt.tellg() > MAX_FILE_SIZE)
       error(("File " + name + " is larger than 3 MB").c_str());
+    
+    string fileContent = base64_file(attach[i].c_str());
+    int fileContentLength = fileContent.length();   
 
     emailContent += "--" + boundary + "\r\n"
                     "Content-Type: " + contentTypeMapping[extension] + "; name=\"" + name + "\"\r\n"
