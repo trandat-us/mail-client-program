@@ -19,6 +19,19 @@
           "To": [
             "tmdat21@clc.fitus.edu.vn"
           ]
+        },
+        {
+          "Attachment": [],
+          "Bcc": [],
+          "Cc": [],
+          "Content": "Email with no attachment",
+          "Date": "Fri May 10 03:09:28 PM +07 2024",
+          "From": "Minh Dat <tmdat21@clc.fitus.edu.vn>",
+          "Read": false,
+          "Subject": "No Attachment]",
+          "To": [
+            "tmdat21@clc.fitus.edu.vn"
+          ]
         }
       ]
     },
@@ -140,5 +153,5 @@
       ]
     }
   ],
-  "emailQuant": 7
+  "emailQuant": 8
 }

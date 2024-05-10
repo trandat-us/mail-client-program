@@ -140,7 +140,6 @@ string createEmailContentNoAttachment(vector<string> to, vector<string> cc, vect
   const char* date = exec("date");
   emailContent += "Date: " + string(date) + "\r\n"; 
   emailContent += "Subject: " + subject + "\r\n"
-                  "\r\n"
                   "Content-Type: text/plain; charset=UTF-8; format=flowed\r\n"
                   "Content-Transfer-Encoding: 7bit\r\n"
                   "\r\n" + content + "\r\n"
